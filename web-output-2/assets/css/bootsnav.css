@@ -47,13 +47,13 @@ nav.bootsnav.navbar-sidebar.bg-dark ul.nav li.dropdown h6 {
 }
 
 .attr-nav ul.cart-list li.total a {
-  background: #bf3654;
+  background: #1E3A8A;
     /* Old browsers */
-  background: -moz-linear-gradient(top, #bf3654 0%, #00eaea 100%);
+  background: -moz-linear-gradient(top, #1E3A8A 0%, #00eaea 100%);
     /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #bf3654 0%,#00eaea 100%);
+  background: -webkit-linear-gradient(top, #1E3A8A 0%,#00eaea 100%);
     /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #bf3654 0%,#00eaea 100%);
+  background: linear-gradient(to bottom, #1E3A8A 0%,#00eaea 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   border-radius: 50px;
   -webkit-border-radius: 50px;
@@ -269,7 +269,7 @@ li.close-full-menu {
 
 .attr-nav > ul li.dropdown ul.dropdown-menu {
   margin-top: 0;
-  border-top: 3px solid #bf3654 !important;
+  border-top: 3px solid #1E3A8A !important;
 }
 
 .attr-nav > ul > li {
@@ -298,7 +298,7 @@ li.close-full-menu {
   text-align: center;
   top: 43%;
   width: 20px;
-  background-color: #bf3654;
+  background-color: #1E3A8A;
 }
 
 .attr-nav > ul > li.dropdown ul.dropdown-menu {
@@ -380,7 +380,7 @@ ul.cart-list > li.total > span {
 }
 
 .navbar.bg-dark .top-search {
-  background: #bf3654 none repeat scroll 0 0;
+  background: #1E3A8A none repeat scroll 0 0;
 }
 
 .top-search {
@@ -470,7 +470,7 @@ body.on-side .body-overlay {
 .side .close-side {
   border: 2px solid #e7e7e7;
   border-radius: 50%;
-  color: #bf3654;
+  color: #1E3A8A;
   float: right;
   font-size: 14px;
   height: 40px;
@@ -508,7 +508,7 @@ body.on-side .body-overlay {
 }
 
 .navbar .side .widget.social li a:hover {
-  background: #bf3654 none repeat scroll 0 0;
+  background: #1E3A8A none repeat scroll 0 0;
   color: #ffffff;
 }
 
@@ -542,7 +542,7 @@ body.on-side .body-overlay {
   background: #f4f4f4 none repeat scroll 0 0;
   border: 1px solid #e7e7e7;
   border-radius: 50%;
-  color: #bf3654;
+  color: #1E3A8A;
   font-size: 16px;
   height: 45px;
   line-height: 43px;
@@ -597,7 +597,7 @@ body.on-side .body-overlay {
 }
 
 .side .widget ul.link li a {
-  color: #bf3654;
+  color: #1E3A8A;
   display: block;
   font-weight: bold;
   letter-spacing: 1px;
@@ -618,7 +618,7 @@ body.on-side .body-overlay {
 }
 
 .bootsnav .side .widget.search form button {
-  background: #bf3654 none repeat scroll 0 0;
+  background: #1E3A8A none repeat scroll 0 0;
   border: medium none;
   -webkit-border-radius: 0 5px 5px 0;
   -moz-border-radius: 0 5px 5px 0;
@@ -662,12 +662,12 @@ nav.navbar.bootsnav .share ul > li > a {
 }
 
 nav.navbar.bootsnav .share.dark ul > li > a {
-  background-color: #bf3654;
+  background-color: #1E3A8A;
   color: #ffffff;
 }
 
 nav.navbar.bootsnav .share ul > li > a:hover {
-  color: #bf3654;
+  color: #1E3A8A;
 }
 
 nav.navbar.bootsnav.navbar-fixed {
@@ -789,12 +789,12 @@ nav.navbar.bootsnav {
   }
 
   nav.navbar.bootsnav ul.nav > li.active > a {
-    color: #bf3654;
+    color: #1E3A8A;
   }
 
   nav.navbar.bootsnav.active-full ul.nav > li > a.active,
     nav.navbar.bootsnav.active-full ul.nav > li > a:hover {
-    background: #bf3654 none repeat scroll 0 0 !important;
+    background: #1E3A8A none repeat scroll 0 0 !important;
     color: #ffffff;
   }
 
@@ -803,7 +803,7 @@ nav.navbar.bootsnav {
   }
 
   nav.navbar.bootsnav ul.nav > li > a:hover {
-    color: #bf3654;
+    color: #1E3A8A;
   }
 
   nav.op-nav.bootsnav ul.nav.navbar-nav li a {
@@ -869,11 +869,11 @@ nav.navbar.bootsnav {
   }
 
   nav.navbar.bootsnav ul.navbar-right li.dropdown ul.dropdown-menu li a:hover {
-    color: #bf3654;
+    color: #1E3A8A;
   }
 
   nav.navbar.bootsnav ul.navbar-left li.dropdown ul.dropdown-menu li a:hover {
-    color: #bf3654;
+    color: #1E3A8A;
   }
 
   nav.navbar.bootsnav ul.navbar-right li.dropdown.dropdown-left ul.dropdown-menu li a {
@@ -961,7 +961,7 @@ nav.navbar.bootsnav {
   }
 
   nav.navbar.bootsnav ul.dropdown-menu.megamenu-content .content ul.menu-col li a:hover {
-    color: #bf3654;
+    color: #1E3A8A;
   }
 
   nav.navbar.bootsnav.on ul.dropdown-menu.megamenu-content .content {
@@ -1243,7 +1243,7 @@ nav.navbar.bootsnav {
   }
 
   nav.bootsnav.navbar-sidebar ul.nav > li > a:hover {
-    color: #bf3654;
+    color: #1E3A8A;
   }
 
   nav.bootsnav.navbar-sidebar ul.nav > li.dropdown > a:after {
@@ -1450,7 +1450,7 @@ nav.navbar.bootsnav {
 
   nav.navbar.bootsnav ul.nav li.dropdown > ul.dropdown-menu li:hover > a {
     background-color: transparent !important;
-    color: #bf3654 !important;
+    color: #1E3A8A !important;
   }
 
   nav.bg-dark.navbar.bootsnav ul.nav li.dropdown > ul.dropdown-menu li a {
