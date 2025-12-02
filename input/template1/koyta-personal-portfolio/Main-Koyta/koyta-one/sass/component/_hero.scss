@@ -1,0 +1,197 @@
+
+
+/*-------------------------------------------------------
+03. Hero css 
+---------------------------------------------------------*/
+
+@mixin hero {
+    height: 100vh;
+    background-position: center center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+//Hero 1 #00008B #0B0F28
+
+.hero-single {
+	position: relative;
+	z-index: 1;
+    @include hero;
+	&::before {
+		position: absolute;
+		z-index: -1;
+		height: 100%;
+		width: 100%;
+		background-color: var(--clr-black) ;
+		opacity: .6;
+		top: 0;
+		left: 0;
+		content: '';
+	}
+	.hero-content {
+		text-align: center;
+        .hero-title {
+			color: var(--clr-white);
+			margin-bottom: 4rem;
+			span {
+				font-size: 1.8rem;
+				font-weight: 600;
+				line-height: 3rem;
+				color: var(--clr-def);
+			}
+        }
+		
+		.hero-sub-title {
+			margin-bottom: 2rem;
+			color: var(--clr-white);
+			margin-bottom: 4rem;
+		}
+		
+		p {
+			color: var(--clr-white);
+			font-size: 1.8rem;
+			line-height: 30px;
+			font-weight: 400;
+			margin-bottom: 4rem;
+			padding: 0 14rem;
+		}
+		
+        .hero-btn {
+            
+        }
+    }
+}
+
+.hero-title {
+	font-size: 7rem;
+    font-weight: 600;
+    line-height: 1;
+	letter-spacing: -0.005em;
+}
+
+.hero-sub-title {
+	font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 1;
+	text-transform: uppercase;
+}
+
+
+
+//Hero Slider
+
+.hero-slider.owl-theme .owl-nav {
+    margin-top: 0px;
+}
+
+.hero-slider.owl-theme .owl-nav [class*=owl-] {
+    color:var(--clr-def);
+    font-size: 5rem;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 0;
+}
+
+.hero-slider.owl-theme .owl-nav [class*=owl-]:hover {
+    background: none;
+    color: var(--clr-def);
+    text-decoration: none;
+}
+
+.hero-slider.owl-theme .owl-nav .owl-prev {
+	left: 5rem;
+}
+
+.hero-slider.owl-theme .owl-nav .owl-next {
+	right: 5rem;
+}
+
+.hero-slider.owl-theme .owl-nav .owl-prev,
+.hero-slider.owl-theme .owl-nav .owl-next {
+	position: absolute;
+	top: 50%;
+	transform: translate(0,-50%);
+}
+
+//Hero 2 Image
+
+@mixin hero-2 {
+	position: absolute;
+	border-radius: 50%;
+	width: 440px;
+	height: 440px;
+	content: '';
+	
+}
+
+.hero-single-2 {
+	background-position: center center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+	padding-top: 23rem;
+	.hero-content-2 {
+		display: flex;
+		align-items: center;
+		height: 100%;
+		.hero-sub-title {
+			color: var(--clr-white);
+			margin-bottom: 3rem;
+		}
+		.hero-title {
+			color: var(--clr-white);
+			font-weight: 700;
+			margin-bottom: 3rem;
+		}
+		p {
+			color: var(--clr-white);
+			font-family: var(--font-2);
+			font-size: 1.8rem;
+			margin-bottom: 3rem;
+			padding-right: 10rem;
+		}
+	}
+}
+
+.hero-2-img {
+	position: relative;
+	z-index: 1;
+    text-align: right;
+	&::before {
+		@include hero-2;
+		background-image: -moz-linear-gradient( 11deg, rgb(41,19,66) 0%, rgb(198,2,66) 100%);
+		background-image: -webkit-linear-gradient( 11deg, rgb(41,19,66) 0%, rgb(198,2,66) 100%);
+		background-image: -ms-linear-gradient( 11deg, rgb(41,19,66) 0%, rgb(198,2,66) 100%);
+		z-index: -1;
+		transition: all .5s ease-in-out;
+		animation: ups-down 5s infinite ease-out;
+		pointer-events: none;
+	}
+	&::after {
+		@include hero-2;
+		background-color: rgb(196, 3, 66);
+		z-index: -2;
+		top: -30px;
+		right: -15px;
+	}
+}
+
+@keyframes ups-down {
+	0% {
+		top: -40px;
+		right: -30px;
+	}
+	50% {
+		top: 0;
+		right: 0;
+	}
+	100% {
+		top: -40px;
+		right: -30px;
+	}
+}

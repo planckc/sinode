@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SINODE - Test Rendering</title>
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet">
+    <style>
+        body { font-family: Arial; }
+        .test-container { padding: 20px; background: #f0f0f0; }
+        .test-section { margin: 20px 0; padding: 20px; background: white; border-left: 4px solid #003DA5; }
+        h2 { color: #003DA5; }
+        .success { color: green; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🧪 SINODE Rendering Test</h1>
+
+        <div class="test-section">
+            <h2>✅ Test 1: Bootstrap CSS Loading</h2>
+            <p class="success">Si ves este texto en Arial con fondo blanco y borde azul, Bootstrap está cargando.</p>
+            <button class="btn btn-primary">Botón de prueba</button>
+        </div>
+
+        <div class="test-section">
+            <h2>✅ Test 2: SINODE Logo</h2>
+            <img src="assets/img/logo.png" alt="SINODE Logo" style="max-height: 100px;">
+            <p>Logo de SINODE debería verse arriba (si no, hay problema con rutas de imágenes).</p>
+        </div>
+
+        <div class="test-section">
+            <h2>✅ Test 3: Hero Banner Content</h2>
+            <h3>Somos Iglesia, NO Denominaciones</h3>
+            <p>La expresión digital de la Iglesia. Un espacio de construcción colectiva centrado en Cristo y guiado por el Espíritu Santo.</p>
+        </div>
+
+        <div class="test-section">
+            <h2>✅ Test 4: Grid System</h2>
+            <div class="row">
+                <div class="col-md-4" style="background: #e3f2fd; padding: 10px;">Col 1</div>
+                <div class="col-md-4" style="background: #f3e5f5; padding: 10px;">Col 2</div>
+                <div class="col-md-4" style="background: #fff3e0; padding: 10px;">Col 3</div>
+            </div>
+            <p>Si ves 3 columnas en desktop, el grid de Bootstrap funciona.</p>
+        </div>
+
+        <div class="test-section">
+            <h2>✅ Test 5: SINODE Sections</h2>
+            <h3>Lo Que Hacemos</h3>
+            <ul>
+                <li><strong>Bases Doctrinales</strong> - Marco doctrinal claro</li>
+                <li><strong>Discernimiento Bíblico</strong> - Protección de doctrina</li>
+                <li><strong>Crecimiento Espiritual</strong> - Recursos comunitarios</li>
+                <li><strong>Proyectos de Impacto</strong> - Iniciativas concretas</li>
+            </ul>
+        </div>
+
+        <div class="test-section">
+            <h2>✅ Test 6: Áreas de Ministerio</h2>
+            <h3>Ministerios SINODE</h3>
+            <ul>
+                <li>Formación Espiritual</li>
+                <li>Discernimiento Bíblico</li>
+                <li>Comunidad y Conexión</li>
+                <li>Impacto Social</li>
+                <li>Testimonios Vivos</li>
+                <li>Biblioteca Digital</li>
+            </ul>
+        </div>
+
+        <div class="test-section">
+            <h2>🔧 Diagnóstico del Sistema</h2>
+            <p id="diagnostics">Cargando diagnóstico...</p>
+            <script>
+                window.addEventListener('load', function() {
+                    const diag = document.getElementById('diagnostics');
+                    const results = [];
+
+                    // Check Bootstrap
+                    if (typeof bootstrap !== 'undefined') {
+                        results.push('✅ Bootstrap JS cargado');
+                    } else {
+                        results.push('❌ Bootstrap JS NO cargado');
+                    }
+
+                    // Check jQuery
+                    if (typeof jQuery !== 'undefined') {
+                        results.push('✅ jQuery cargado');
+                    } else {
+                        results.push('❌ jQuery NO cargado');
+                    }
+
+                    // Check Owl Carousel
+                    if (typeof $.fn !== 'undefined' && typeof $.fn.owlCarousel !== 'undefined') {
+                        results.push('✅ Owl Carousel cargado');
+                    } else {
+                        results.push('❌ Owl Carousel NO cargado');
+                    }
+
+                    // Check CSS
+                    const styles = window.getComputedStyle(document.body);
+                    if (styles.backgroundColor !== 'rgba(0, 0, 0, 0)' || styles.fontSize) {
+                        results.push('✅ CSS estilos aplicados');
+                    } else {
+                        results.push('⚠️ CSS estilos pueden no estar cargados');
+                    }
+
+                    // DOM elements
+                    const elements = document.querySelectorAll('[class*="btn"], [class*="col-"]').length;
+                    results.push(`✅ ${elements} elementos con clases Bootstrap encontrados`);
+
+                    diag.innerHTML = results.map(r => `<p>${r}</p>`).join('');
+                });
+            </script>
+        </div>
+
+        <hr style="margin: 40px 0;">
+        <p style="color: #666; font-size: 12px;">
+            Si ves este contenido con formato y colores, el servidor y rutas funcionan.<br>
+            Si solo ves logo y texto simple, Bootstrap CSS no está cargando.
+        </p>
+    </div>
+</body>
+</html>

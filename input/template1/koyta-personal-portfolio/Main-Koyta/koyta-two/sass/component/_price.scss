@@ -1,0 +1,99 @@
+
+/*-------------------------------------------------------
+17. Price css 
+---------------------------------------------------------*/
+
+.price-wpr {
+    margin-top: 3rem;
+}
+
+.price-content {
+	position: relative;
+	z-index: 1;
+	.price-icon {
+		position: absolute;
+		top: -50px;
+		left: 50%;
+		transform: translate(-50%, 0);
+		z-index: 2;
+		i {
+			border-radius: 50%;
+			background-color: var(--clr-white);
+			box-shadow: 0px 5px 20px 0px rgba(243, 243, 243, 1);
+			width: 99px;
+			height: 99px;
+			line-height: 99px;
+			text-align: center;
+			display: inline-block;
+		}
+	}
+}
+
+.price-box {
+    padding: 9rem 5rem 4rem 5rem;
+	position: relative;
+	z-index: 1;
+	border-radius: 10px;
+	background-color: var(--clr-white);
+	box-shadow: 0px 5px 20px 0px rgba(243, 243, 243, 1);
+	overflow: hidden;
+	text-align: center;
+	&::before {
+		width: 100%;
+		height: 269px;
+		position: absolute;
+		content: '';
+		top: -130px;
+		left: 0;
+		border-radius: 40%;
+		z-index: -2;
+		background-color: #fafafa;
+	}
+    .price-head {
+        margin-bottom: 7rem;
+        .price-ribbon-title {
+			color: var(--clr-heading);
+			display: block;
+			font-weight: 700;
+			font-family: var(--font-2);
+			font-size: 2.4rem;
+        } 
+    }
+    .price-info {
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+            li {
+                font-size: 17px;
+                font-weight: 400;
+                line-height: 20px;
+                letter-spacing: 0.0025em;
+                display: flex;
+                align-items: center;
+				justify-content: center;
+                gap: 1rem;
+				color: var(--clr-body);
+                i {
+                    color: var(--clr-black);
+                }
+            }
+        }
+    }
+    .price-bottom {
+        margin-top: 4rem;
+		a {
+			text-align: center;
+			line-height: 1;
+		}
+    }
+}
+
+.price-ribbon-title {
+    font-size: 23px;
+    font-weight: 500;
+    line-height: 10px;
+    letter-spacing: 0.0015em; 
+}
+
+

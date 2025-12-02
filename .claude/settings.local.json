@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir /s /b \"c:\\workspace\\CLAUDE\\template-injection-demo\\input\")",
+      "Bash(dir \"C:\\workspace\\CLAUDE\\template-injection-demo\\input\\template\\koyta-personal-portfolio\\Main-Koyta\\koyta-one\\assets\\img\\01_koyta_img\" /b)",
+      "Bash(dir:*)",
+      "Bash(powershell -Command:*)",
+      "Bash(python verificar_sitio_final.py:*)",
+      "Bash(npx playwright test:*)",
+      "Bash(git init:*)",
+      "Bash(git remote add:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git checkout:*)",
+      "Bash(git rebase:*)",
+      "Bash(GIT_EDITOR=true git rebase:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

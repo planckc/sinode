@@ -1,0 +1,60 @@
+/*-------------------------------------------------------
+21. Footer css 
+---------------------------------------------------------*/
+
+footer {
+	background-color: var(--clr-black);
+	padding: 8rem 0;
+}
+
+//Copyright
+.copyright {
+    p {
+        color: #e8e8e8;
+		text-transform: uppercase;
+		margin-bottom: 0;
+    }
+}
+
+//Menu
+
+.footer-menu {
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	gap: 1rem;
+	li {
+		a {
+			color: #d5d5d5;
+			font-size: 1.6rem;
+			text-transform: uppercase;
+		}
+	}
+}
+
+//Social
+.footer-social {
+	display: flex;
+	align-content: center;
+	justify-content: flex-end;
+	gap: 1rem;
+	li {
+		a {
+			i {
+				width: 44px;
+				height: 44px;
+				font-size: 1.6rem;
+				line-height: 44px;
+				border: 1px solid var(--clr-white);
+				color: var(--clr-white);
+				text-align: center;
+				border-radius: 50%;
+				transition: all .5s ease-in-out;
+				&:hover {
+					background-color: var(--clr-def);
+					border: 1px solid transparent;
+				}
+			}
+		}
+	}
+}

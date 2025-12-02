@@ -1,0 +1,70 @@
+/*-------------------------------------------------------
+16. Blog css
+---------------------------------------------------------*/
+
+.blog-bg {
+	background-color: #fafafa;
+}
+
+.blog-box {
+	border-radius: 10px;
+	background-color: var(--clr-white);
+	box-shadow: 0px 5px 20px 0px rgba(243, 243, 243, 1);
+	padding: 2rem;
+	.blog-pic {
+		position: relative;
+		z-index: 1;
+		.blog-date {
+			position: absolute;
+			top: 1rem;
+			left: 1rem;
+			span {
+				display: block;
+				padding: 5px 1rem;
+				font-size: 1.6rem;
+				font-family: var(--font-3);
+				background-color: var(--clr-white);
+				border-radius: 5px;
+			}
+		}
+	}
+	.blog-desc {
+		padding: 2rem 2rem 1rem 2rem;
+		h5 {
+			font-size: 2rem;
+			line-height: 3.4rem;
+			font-weight: 700;
+		}
+		p {
+			font-family: var(--font-3);
+		}
+	}
+}
+
+//Blog Slider
+
+.blog-sldr.owl-theme .owl-nav {
+    margin-top: 40px;
+}
+
+.blog-sldr.owl-theme .owl-nav [class*=owl-] {
+    color:var(--clr-black);
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+    font-size: 1.6rem;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 50%;
+	background-color: var(--clr-white);
+	box-shadow: 0px 5px 20px 0px rgba(243, 243, 243, 1);
+	margin: 0 1rem;
+}
+
+.blog-sldr.owl-theme .owl-nav [class*=owl-]:hover {
+    background: var(--clr-def);
+    color: var(--clr-white);
+    text-decoration: none;
+}

@@ -1,0 +1,108 @@
+/*-------------------------------------------------------
+18. Portfolio css
+---------------------------------------------------------*/
+
+.cmm {
+	padding: 0 3rem;
+}
+
+.portfolio-1 {
+	display: grid;
+    grid-template-columns: 440px 440px 1fr;
+    grid-gap: 3rem;
+}
+
+.portfolio-2 {
+	display: grid;
+    grid-template-columns: 1fr 440px 440px;
+    grid-gap: 3rem;
+}
+
+.project-box {
+	width: 100%;
+	display: none;
+	.port-pic {
+		position: relative;
+		z-index: 1;
+		img {
+			width: 100%;
+			max-width: 100%;
+			height: auto; 
+		}
+		.port-overlay {
+			position: absolute;
+			bottom: 3rem;
+			left: 3rem;
+		}
+	}
+}
+
+.fil-cat {
+	font-size: 1.6rem;
+	font-family: var(--font-2);
+	color: var(--clr-heading);
+	background-color: transparent;
+	border: none;
+	outline: none;
+	text-transform: uppercase;
+	font-weight: 500;
+}
+.fil-cat:focus {
+	box-shadow: none;
+	outline: none;
+}
+
+.fil-cat.active {
+	color: var(--clr-def);
+}
+
+.port-content {
+	border-radius: 5px;
+	background-color: var(--clr-white);
+	padding: 1.5rem 4rem 1.5rem 2rem;
+	position: relative;
+    z-index: 1;
+	transform: translate(0,-90px);
+	opacity: 0;
+	visibility: hidden;
+	transition: .5s ease-in-out;
+	a {
+		position: absolute;
+		top: 50%;
+		right: -22px;
+		transform: translate(0,-50%);
+		i {
+			border-radius: 50%;
+			background-color: var(--clr-white);
+			box-shadow: 0px 5px 20px 0px #f3f3f3;
+			width: 44px;
+			height: 44px;
+			line-height: 44px;
+			text-align: center;
+			color: var(--clr-def);
+			display: inline-block;
+		}
+	}
+	h5 {
+		color: #292929;
+		text-transform: uppercase;
+		font-weight: 700;
+		line-height: 1;
+	}
+	span {
+		font-family: var(--font-2);
+		color: var(--clr-def);
+	}
+}
+
+.project-box {
+	&:hover {
+		.port-content {
+			transform: translate(0,0);
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+	
+}
+

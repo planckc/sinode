@@ -1,0 +1,88 @@
+/*-------------------------------------------------------
+14. Counter css 
+---------------------------------------------------------*/
+
+.vid-ov {
+	position: relative;
+	z-index: 1;
+	&::before {
+		position: absolute;
+		z-index: -1;
+		content: '';
+		height: 100%;
+		width: 100%;
+		background-color: rgba(0,0,0,.6);
+		top: 0;
+		left: 0;
+	}
+}
+
+.video-area {
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+//My Services
+
+.my-service {
+	h5 {
+		color: var(--clr-def);
+		border-bottom: 4px solid var(--clr-white);
+		display: inline-block;
+		margin-bottom: 3.5rem;
+		font-weight: 400;
+		text-transform: uppercase;
+	}
+	h4 {
+		color: var(--clr-white);
+		margin-bottom: 3rem;
+		font-weight: 700;
+		line-height: 3.4rem;
+	}
+	p {
+		color: var(--clr-white);
+		font-family: var(--font-3);
+	}
+}
+
+//Progress Bar
+
+.progress-box {
+	margin-bottom: 4rem;
+	position: relative;
+	z-index: 1;
+	padding-left: 3rem;
+	&::before {
+		position: absolute;
+		z-index: -1;
+		content: '';
+		height: 1rem;
+		width: 1rem;
+		background-color: var(--clr-white);
+		top: 5px;
+		left: 0;
+	}
+	&:last-child {
+		margin-bottom: 0;
+	}
+	h5 {
+		font-size: 1.6rem;
+		text-transform: uppercase;
+		color: var(--clr-white);
+		font-weight: 400;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 2rem;
+	}
+	.progress {
+		height: 5px;
+		background-color: #7d7d7d;
+		border-radius: 0;
+		.progress-bar {
+			background-color: var(--clr-white);
+		}
+	}
+}
