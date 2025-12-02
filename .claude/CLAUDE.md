@@ -1,233 +1,100 @@
-# Contexto del Proyecto: Template Injection Demo
+# SINODE Landing Page - Instrucciones para Claude
 
-## 🎯 Propósito de este Proyecto
+## Estado del Proyecto: COMPLETADO
 
-Este es un **proyecto demo** del workflow `template-injection` de **claude-flows**.
+Landing page para SINODE (Somos Iglesia, NO Denominaciones) desarrollada mediante inyección de contenido en una plantilla HTML profesional de ThemeForest.
 
-**NO es un proyecto funcional**, sino una **estructura de carpetas preparada** para demostrar cómo usar el workflow de inyección de contenido en plantillas HTML profesionales.
-
-## 🏗️ Arquitectura del Workflow
-
-### Filosofía: IA como "Inyector de TEXTO ÚNICAMENTE"
-
-Este workflow es **único** en el ecosistema claude-flows:
-
-- ❌ **NO genera código frontend** desde cero
-- ❌ **NO usa** el skill `frontend-design`
-- ❌ **NO modifica** estructura HTML o componentes visuales
-- ⚠️ **SÍ reemplaza imágenes** PERO en su ubicación original de la plantilla
-- ❌ **NO modifica paths** de imágenes (se mantienen iguales)
-- ❌ **NO crea carpetas nuevas** para assets
-- ✅ **SÍ preserva** diseño profesional original AL 100%
-- ✅ **SÍ inyecta** SOLO contenido TEXTUAL quirúrgicamente
-- ✅ **SÍ respeta** integridad técnica y visual ABSOLUTA
-
-**Rol de la IA:** Reemplazador de textos + Reemplazador de imágenes (en su ubicación original).
-
-## 📁 Estructura del Proyecto
+## Estructura Actual
 
 ```
 template-injection-demo/
-│
-├── input/                          # 📥 INPUTS (usuario coloca aquí)
-│   ├── template/                   # Plantilla Envato/ThemeForest COMPLETA
-│   │   ├── index.html             # ⚠️ SE COPIA TAL CUAL
-│   │   ├── index-2.html           # ⚠️ SE COPIA TAL CUAL
-│   │   ├── css/                   # ⚠️ SE COPIA TAL CUAL
-│   │   ├── js/                    # ⚠️ SE COPIA TAL CUAL
-│   │   ├── images/                # ⚠️ SE COPIA TAL CUAL
-│   │   └── documentation.html     # ⚠️ SE COPIA TAL CUAL
-│   │
-│   └── brand/                      # Contenido de marca
-│       ├── textos.md              # Contenido textual
-│       └── imagenes/              # Imágenes de marca (logo, fotos, etc.)
-│
-├── src/                            # 📤 OUTPUT (generado por workflow)
-│   └── [Copia exacta de plantilla con SOLO textos modificados]
-│
-├── .claude/
-│   └── CLAUDE.md                   # Este archivo
-│
-├── GUIA-CAMBIOS.md                 # Guía para modificaciones futuras
-├── MAPA-INYECCION.md               # Registro de cambios de TEXTO realizados
-├── README.md                       # Instrucciones de uso
-├── SETUP.md                        # Setup instructions
-└── .gitignore                      # Git config
+├── .claude/                # Configuración Claude Code
+├── docs/                   # Documentación del proyecto
+│   ├── GUIA-IMAGENES.md   # Guía para gestionar imágenes y textos
+│   ├── ESTADO-PROYECTO.md # Estado del proyecto
+│   └── ...
+├── input/                  # Archivos de entrada
+│   ├── brand/             # Contenido de marca (colores, logos, tono)
+│   └── template/          # Plantilla HTML original
+├── scripts/               # Scripts de Python (tests, verificación)
+├── screenshots/           # Capturas de pantalla
+├── web-output-2/          # SITIO WEB FINAL
+└── README.md              # Documentación principal
 ```
 
-## 🔄 Flujo de Trabajo
+## Archivo Principal
 
-### 1. Preparación (Usuario)
-- Descargar plantilla HTML de Envato/ThemeForest
-- Colocar plantilla **COMPLETA** en `input/template/`
-- Preparar contenido en `input/brand/`:
-  - `textos.md` - Contenido textual
-  - `imagenes/` - Imágenes de marca (logo, fotos, etc.)
-
-### 2. Análisis (IA - Explore subagent)
-- Explorar estructura de `input/template/`
-- Leer documentación de plantilla
-- Identificar variantes disponibles (index1, index2, etc.)
-- Recomendar variante óptima según contenido de marca
-
-### 3. Selección (Usuario)
-- Revisar recomendaciones de la IA
-- Seleccionar variante de plantilla a usar
-
-### 4. Copia Completa (IA - Bash)
-- **Copiar TODA la plantilla** a `src/` SIN modificar NADA
-- Preservar estructura completa: HTML, CSS, JS, images/, assets/
-
-### 5. Mapeo de Contenido (IA - Read + Grep)
-- **Textos**: Identificar placeholders en HTML (`<h1>`, `<p>`, etc.)
-- **Imágenes**: Identificar qué imágenes de la plantilla reemplazar
-  - La plantilla tiene su propia carpeta (ej: `src/images/`)
-  - Usuario trae imágenes en `input/brand/imagenes/`
-  - Mapear qué archivo de marca reemplaza a cuál de la plantilla
-
-### 6. Inyección de Contenido (IA - Edit + Bash)
-- **Textos**: Reemplazo quirúrgico con Edit tool
-  - Modificar contenido de tags HTML (inner text)
-  - **NO modificar**: atributos, paths, src, href
-
-- **Imágenes**: Reemplazo de archivos (Bash)
-  - **Copiar** imágenes de usuario a carpeta de plantilla
-  - Ejemplo: `input/brand/imagenes/logo.png` → `src/images/logo.png`
-  - **NO modificar paths** en el HTML
-  - **Respetar estructura** de carpetas de la plantilla
-
-### 7. Validación (IA - code-reviewer)
-- Verificar sintaxis HTML (que no se rompió)
-- Verificar que SOLO se modificó texto
-- Confirmar que paths originales están intactos
-- Generar checklist de QA
-
-### 8. Documentación (IA - Write)
-- Generar `GUIA-CAMBIOS.md`
-- Crear `MAPA-INYECCION.md` (SOLO cambios de texto)
-- Documentar qué textos se reemplazaron
-
-## 🛠️ Componentes Clave del Workflow
-
-### Subagents utilizados:
-1. **Explore** - Análisis de plantilla y variantes
-2. **code-reviewer** - Validación técnica (opcional)
-
-### Tools utilizados:
-- **Read** - Leer HTML, documentación, contenido de marca
-- **Grep** - Buscar placeholders de TEXTO únicamente
-- **Edit** - Modificación quirúrgica de TEXTO
-- **Write** - Generar documentación
-- **Bash** - Copiar plantilla completa a src/
-
-### ❌ Componentes NO utilizados:
-- **frontend-design skill** - Va contra la filosofía
-- **code-architect** - No se diseña arquitectura nueva
-
-## ⚡ Ejecución del Workflow
-
-Cuando ejecutes el workflow `template-injection` en claude-flows:
-
-```bash
-/template-injection
+El sitio web está en:
+```
+web-output-2/index.html
 ```
 
-El sistema:
-1. Te pedirá confirmar inputs
-2. Analizará la plantilla
-3. Te recomendará variante
-4. Esperará tu selección
-5. **Copiará TODO** de `input/template/` a `src/`
-6. Ejecutará inyección de **SOLO TEXTO**
-7. Generará documentación
-8. Te mostrará resultado en `src/`
+## Paleta de Colores Oficial
 
-## 🎯 Casos de Uso Ideales
+| Color | Código | Uso |
+|-------|--------|-----|
+| Azul profundo | `#1E3A8A` | Títulos, headers, fondos principales |
+| Verde esperanza | `#10B981` | Acentos, iconos, enlaces destacados |
+| Blanco | `#FFFFFF` | Fondos |
+| Gris | `#6B7280` | Texto secundario |
 
-Este workflow es perfecto para:
+**IMPORTANTE:** No usar amarillo/dorado (#c9a03f). Ya fue reemplazado por verde.
 
-- ✅ **Plantillas de Envato/ThemeForest** totalmente funcionales
-- ✅ **Sitios corporativos** donde solo cambias textos
-- ✅ **Landing pages premium** con diseño perfecto
-- ✅ Proyectos donde **el diseño NO se toca**
-- ✅ Plantillas con **imágenes genéricas pero aceptables**
+## Reglas de Edición
 
-## ❌ Cuándo NO usar este workflow
+### Permitido
+- Modificar textos dentro de tags HTML
+- Reemplazar imágenes manteniendo el mismo nombre
+- Ajustar colores usando la paleta oficial
+- Agregar nuevas secciones siguiendo el patrón existente
 
-- Si necesitas cambiar **imágenes** → Hazlo manualmente después
-- Si necesitas **rediseño visual** → Usa workflow `landing-page`
-- Si la plantilla es **React/Vue/Angular** → Requiere workflow diferente
-- Si quieres **modificar colores** → Hazlo manualmente después
+### No Permitido
+- Modificar estructura de carpetas
+- Cambiar paths de imágenes en el HTML
+- Eliminar secciones sin consultarlo
+- Usar colores fuera de la paleta
 
-## 🔐 Consideraciones Técnicas
+## Secciones del Sitio
 
-### Preservación ABSOLUTA de:
-- Estructura HTML completa (100%)
-- Todos los atributos HTML
-- Componentes visuales (cards, buttons, modals)
-- Sistema JavaScript completo
-- Archivos CSS sin modificar
-- **TODAS las imágenes y paths originales**
-- Animaciones e interactividad
-- Responsive design
-- **Assets folder completo**
+1. Header - Navegación con logo y menú
+2. Banner - Slider principal
+3. Somos Iglesia - 4 versículos
+4. No Somos - Aclaración
+5. Fundamentos - Cimientos de la fe
+6. Comunidad - Un cuerpo, muchos miembros
+7. Participa - Proyectos con estados de avance
+8. CTA Doctrina - Enlace a doctrina.sinode.org
+9. Blog - Artículos y reflexiones
+10. Galería - Biblioteca visual
+11. Banner Misión - Mensaje de impacto
+12. Únete - Formulario + FAQ
+13. Facilitadores - Equipo
+14. Partners - Logos
+15. Footer - Contacto y enlaces
 
-### Modificaciones permitidas:
-- ✅ Inner text de tags HTML: `<h1>Texto aquí</h1>`
-- ✅ Contenido de párrafos: `<p>Texto aquí</p>`
-- ✅ Textos de enlaces: `<a href="#">Texto aquí</a>`
-- ✅ Textos de botones: `<button>Texto aquí</button>`
-- ✅ **Archivos de imágenes**: Reemplazar en su carpeta original
-  - Ejemplo: `src/images/logo.png` se reemplaza con `input/brand/imagenes/logo.png`
-  - **NO se modifica** el path en el HTML
-  - Se mantiene la estructura de carpetas de la plantilla
+## Commits Realizados
 
-### Modificaciones PROHIBIDAS:
-- ❌ Atributos HTML (`class`, `id`, `src`, `href`)
-- ❌ Archivos CSS (ni siquiera variables)
-- ❌ Archivos JavaScript
-- ❌ Tags `<img>` y sus atributos
-- ❌ Estructura de carpetas
-- ❌ Paths de archivos en el HTML
-- ❌ Crear carpetas nuevas para assets
+- `7caa27e` - Reemplazar color dorado por verde esperanza
+- `a2e62c6` - Mejoras estructurales y contenido actualizado
+- `718d59c` - Iconos, colores y mayúsculas corregidos
+- `6ccbbe4` - Navegación interna, FAQ y footer reestructurados
+- `fa8538f` - Aplicar paleta de colores SINODE
+- `26ce554` - Initial commit: SINODE landing page
 
-## 📊 Diferencias vs Otros Workflows
+## Para Modificaciones Futuras
 
-| Aspecto | landing-page | template-injection |
-|---------|-------------|-------------------|
-| Diseño | Generado por IA | Plantilla profesional 100% preservada |
-| Imágenes | Generadas/requeridas | De la plantilla (NO se tocan) |
-| CSS | Generado | De la plantilla (NO se toca) |
-| JavaScript | Generado | De la plantilla (NO se toca) |
-| Input | Descripción de proyecto | Plantilla + Textos de marca |
-| Componente clave | frontend-design | Bash (copy) + Edit (texto) |
-| Modificación | Total (código nuevo) | Mínima (solo texto) |
-| Tiempo | 2-4 horas | 30-45 minutos |
+Ver la guía completa en `docs/GUIA-IMAGENES.md` para:
+- Cambiar el logo
+- Reemplazar imágenes placeholder
+- Modificar textos
+- Personalizar colores
 
-## 🚀 Próximos Pasos
+## Enlaces
 
-1. **Preparar inputs**: Coloca plantilla completa y textos de marca
-2. **Ejecutar workflow**: `/template-injection` en claude-flows
-3. **Validar resultado**: Abrir `src/index.html` en navegador
-4. **Modificaciones manuales**: Si necesitas cambiar imágenes, hazlo después manualmente
-
-## 📝 Notas de Mantenimiento
-
-### Para cambiar textos después:
-- Edita directamente `src/index.html`
-- Busca el texto actual y cámbialo
-
-### Para cambiar imágenes después:
-- **Opción 1**: Reemplaza archivos en `src/images/` (mantén mismo nombre)
-- **Opción 2**: Edita `src/index.html` y cambia el `src=""` del `<img>`
-
-### Para cambiar colores después:
-- Edita `src/css/style.css` manualmente
-- Busca variables CSS (`:root`) o colores específicos
+- Repositorio: https://github.com/planckc/sinode
+- Doctrina SINODE: https://doctrina.sinode.org
 
 ---
 
-**Workflow generado por:** `template-injection`
-**Sistema:** claude-flows v1.2.0
-**Fecha:** 2025-11-28
-**Filosofía:** CERO modificaciones estructurales. SOLO texto.
+**Última actualización:** 2025-12-02
+**Estado:** Sitio web completado, pendiente de personalización de imágenes

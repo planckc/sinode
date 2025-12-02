@@ -16,7 +16,9 @@
       "Bash(git fetch:*)",
       "Bash(git pull:*)",
       "Bash(git stash:*)",
-      "Bash(python:*)"
+      "Bash(python:*)",
+      "Bash(findstr:*)",
+      "Bash(del nul)"
     ],
     "deny": [],
     "ask": []
